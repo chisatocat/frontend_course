@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>reduce</title>
+  </head>
+  <body>
+    <script>
+      const a = [5, 12, 33, 1, 20];
+
+      // Function to compare two values and return the maximum
+      const max_value = (a, b) => (a > b ? a : b);
+
+      // Function to find the maximum value in an array
+      function max_sequence(arr) {
+        let result = arr[0];
+        for (let e of arr) {
+          result = max_value(result, e);
+        }
+        return result;
+      }
+
+      // Function to compare two values and return the minimum
+      const min_value = (a, b) => (a < b ? a : b);
+
+      // Function to find the minimum value in an array
+      function min_sequence(arr) {
+        let result = arr[0];
+        for (let e of arr) {
+          result = min_value(result, e);
+        }
+        return result;
+      }
+
+      // Generic reduce function
+      function reduce(fn, arr) {
+        if (arr.length === 0) {
+          return console.log("cant compute empty array!");
+        }
+
+        if (arr.length === 1) {
+          return arr[0];
+        } else {
+          let result = arr[0];
+          for (let x = 1; x < arr.length; x++) {
+            result = fn(result, arr[x]);
+          }
+
+          return result;
+        }
+      }
+
+      // Using reduce with min_value and max_value
+      console.log("Minimum value:", reduce(min_value, a)); // Outputs minimum value
+      console.log("Maximum value:", reduce(max_value, a)); // Outputs maximum value
+      console.log(
+        "Sum value:",
+        reduce((a, b) => a + b, a)
+      ); // Outputs maximum value
+    </script>
+  </body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biology Key Concepts Presentation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f4f4f9;
+      }
+      .presentation {
+        width: 80%;
+        max-width: 600px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        background-color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+      }
+      .navigation {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+      }
+      button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="presentation">
+      <h2 id="title"></h2>
+      <p id="content"></p>
+      <div class="navigation">
+        <button onclick="prevSlide()">上一页</button>
+        <button onclick="nextSlide()">下一页</button>
+      </div>
+    </div>
+
+    <script>
+      const slides = [
+        {
+          title: "细胞理论",
+          content: "所有生物由细胞组成，细胞是生命的基本单位。",
+        },
+        { title: "遗传学", content: "遗传信息通过DNA传递给后代。" },
+        { title: "进化", content: "物种通过自然选择进化。" },
+        {
+          title: "生态系统",
+          content: "生物与其环境之间的相互作用构成生态系统。",
+        },
+        { title: "新陈代谢", content: "生物体通过化学反应维持生命。" },
+        {
+          title: "同源结构",
+          content: "不同物种之间相似的结构暗示共同的进化起源。",
+        },
+        { title: "生物多样性", content: "地球上存在大量不同的生物种类。" },
+        {
+          title: "细胞分裂",
+          content: "细胞通过有丝分裂和减数分裂进行复制和繁殖。",
+        },
+        { title: "信号传导", content: "细胞通过化学信号进行交流。" },
+        { title: "免疫系统", content: "生物体防御病原体和疾病的系统。" },
+      ];
+
+      let currentSlide = 0;
+
+      function showSlide(index) {
+        const slide = slides[index];
+        document.getElementById("title").textContent = slide.title;
+        document.getElementById("content").textContent = slide.content;
+      }
+
+      function nextSlide() {
+        if (currentSlide < slides.length - 1) {
+          currentSlide++;
+          showSlide(currentSlide);
+        }
+      }
+
+      function prevSlide() {
+        if (currentSlide > 0) {
+          currentSlide--;
+          showSlide(currentSlide);
+        }
+      }
+
+      showSlide(currentSlide);
+    </script>
+  </body>
+</html>

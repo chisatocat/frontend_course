@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /* parsing phase: no action
+        execution phase: check x exist or not until windows,
+        reg x in windows, see function , copy content to ram and get address (e.g. 0x100) and pass to x
+
+        execution phase: check y exist or not until windows,
+        reg y in windows, see function , copy content to ram and get address (e.g. 0x200) and pass to y
+
+        start x()
+        check x is exist, find the content xf: 0x100, see (y), start to execute the function, see y is exist, pass the function address yf
+        
+        when execution x(), window will create a execution
+
+        z = 0x200
+
+        check z is is exist (inside execution context), z store a function address, then execute z()
+
+        https://medium.com/itsems-frontend/javascript-execution-context-and-call-stack-e36e7f77152e
+        https://medium.com/@speechless0922/javascript-execution-context-025087cf57cb
+
+
+        
+
+       */
+
+      k = 1;
+      x = function (callback) {
+        // z =y
+
+        console.log("I am from first function expression");
+
+        return callback();
+      };
+
+      y = function () {
+        console.log("I am from second function expression");
+        return 1;
+      };
+
+      w = function () {
+        console.log("I am from third function expression");
+        return 2;
+      };
+
+      x(y); /* x(1+1) calculate is first and then go to function*/
+      x(w);
+
+      if (k == 1) x(y);
+      else x(z);
+
+      a = k == 0 ? x(y) : x(w);
+
+      console.log(`a: ${a}`);
+    </script>
+  </body>
+</html>

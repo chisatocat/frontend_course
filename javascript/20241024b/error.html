@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*a[5] line17,lin18 still work 5 compare 5*/
+
+      a = [5, 12, 33, 1, 20];
+
+      max_value = (a, b) => (a > b ? a : b);
+
+      function max_sequence(a) {
+        let result = a[0];
+
+        for (let e of a) {
+          result = max_value(result, e);
+        }
+
+        return result;
+      }
+
+      min_value = (a, b) => (a < b ? a : b);
+
+      function min_sequence(a) {
+        let result = a[0];
+
+        for (e of a) {
+          result = min_value(result, e);
+        }
+
+        return result;
+      }
+
+      /*two function in same logic and structure
+
+only max and min value function , so can pass a function inside*/
+
+      console.log(min_sequence(a));
+      console.log(max_sequence(a));
+
+      /*case 3*/
+
+      //   function reduce(fn, a) {
+      //     let result = a[0];
+
+      //     for (e of a) {
+      //       result = fn(result, e);
+      //     }
+
+      //     return result;
+      //   }
+
+      //   console.log(reduce(min_sequence, a));
+
+      //   console.log(reduce(max_sequence, a));
+    </script>
+  </body>
+</html>

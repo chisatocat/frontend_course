@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /* x=a=>b=>a+b*/
+
+      /*  how to run  
+            g(x,y)
+            = g(x)g(y)
+
+            curry function
+            partial function
+
+
+            excution phase
+            1) look up add and see "=" afterward, reg add as global (windows),
+            2) see function expression, copy it to ram (add = address of f, content is a ram address)
+            3) add(1)(2)
+            4) check add is it exist (reg), if exist, check add content (function address)
+            5) run function
+            6) a=1 , local reg inside function(a)
+            7) parsing phase, no action
+            8) check return + expression, evalute expression function(b)
+            9) execution context >>> check add(1)(?)  (?) have any value
+            10) inside function(b) execution context, let b=2,   a+b >> 3 
+
+            11) see return and need to evaluate immediately
+      */
+      add = function (a) {
+        return function (b) {
+          return a + b;
+        };
+      };
+
+      let addValue = add(1)(2);
+
+      console.log(`addValue:` + addValue);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   function a() {
+      //     function b() {
+      //       x = 3;
+      //     }
+      //     b();
+      //   }
+      //   a();
+
+      //   let y;
+      //   y = 100;
+
+      //   console.log(y);
+
+      //   let a = 0;
+      //   for (; a < 10000; ) {
+      //     a++;
+      //   }
+
+      //   console.log(a);
+
+      //   for (let b = 0; b < 900000000; b++) {
+      //     console.log(b);
+      //   }
+
+      //   console.log(b);
+
+      //   for (let y = 0; y < 10; y++) {
+      //     setTimeout(() => {
+      //       console.log(y);
+      //     });
+      //   }
+
+      //   for (var z = 0; z <= 10; z++) {
+      //     setTimeout(() => {
+      //       console.log(z);
+      //     }, 1000);
+      //   }
+
+      let x = 1;
+
+      console.log(x++);
+      console.log(++x);
+
+      const person = {
+        name: "ryan chung",
+        age: 20,
+      };
+      console.log(person.name);
+      console.log(person["age"]);
+
+      function a() {
+        console.log("I'm from function a");
+
+        return function () {
+          console.log("Hello World");
+        };
+      }
+
+      person.age = a;
+      person.age();
+
+      //   const p2 = { address: "prince house", floor: 8 };
+      const p2 = { address: "prince house", floor: [1, { name: "Peter" }, 3] };
+
+      let c = "name";
+
+      console.log(p2.floor[1][c]);
+
+      p2.floor = person.age; // pass address to p2.floor
+
+      p2["floor"]();
+
+      console.log(p2.floor);
+
+      function b(x) {
+        x();
+      }
+
+      b(a());
+
+      /* Function expression
+      
+      run time , execution stage assign to hello
+      */
+
+      const hello = function () {
+        console.log("I am from hello function");
+      };
+
+      hello();
+
+      /* Function declaration, parsing phase */
+      function hello2() {
+        console.log("I am from hello2 function");
+      }
+    </script>
+  </body>
+</html>

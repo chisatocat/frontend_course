@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="./js_temp.css" />
+
+    <title>js template</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="test">
+        <h2>Hello World</h2>
+      </div>
+      <header><h1 id="app-title">Shopping List</h1></header>
+
+      <img src="dog.jpg" alt="" width="300px" height="200px" />
+
+      <a href="https://www.google.com" id="google" class="google btn">Google</a>
+
+      <form id="item-form">
+        <div class="form-control">
+          <input
+            type="text"
+            name="item"
+            id="item-input"
+            class="form-input"
+            placeholder="Enter item"
+          />
+        </div>
+
+        <select name="priority" id="priority-input" class="form-input">
+          <option value="0">Select Priority</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+
+        <!-- checkbox-->
+
+        <input type="checkbox" id="checkbox" />Recurring Item
+
+        <div class="form-control">
+          <button type="submit" class="btn">
+            <i class="fa-solid fa-plus"></i>Add Item
+          </button>
+        </div>
+      </form>
+
+      <div class="filter">
+        <input
+          type="text"
+          class="form-input-filter"
+          id="filter"
+          placeholder="filter items"
+        />
+      </div>
+
+      <ul id="item-list" class="items">
+        <li class="item">
+          Apple
+          <button class="remove-item btn-link text-red">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </li>
+        <li class="item">
+          Orange
+          <button class="remove-item btn-link text-red">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </li>
+
+        <li class="item">
+          Banana
+          <button class="remove-item btn-link text-red">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </li>
+
+        <li class="item">
+          Milk
+          <button class="remove-item btn-link text-red">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </li>
+      </ul>
+
+      <button class="btn-clear" id="clear">Clear all</button>
+    </div>
+
+    <!-- <script src="js_temp.js"></script> -->
+    <!-- <script src="./event_listener.js"></script> -->
+    <!-- <script src="./mouse_event.js"></script> -->
+    <!-- <script src="./keyboard_event.js"></script> -->
+    <!-- <script src="./form.js"></script> -->
+    <script src="./delegation.js"></script>
+  </body>
+</html>

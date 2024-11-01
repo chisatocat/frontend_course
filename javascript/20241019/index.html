@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let a = 10;
+
+      console.log(a <= 10);
+
+      if (a <= 10 && a >= 1) {
+        console.log(
+          "a is less than or equal to 10 and greater than or equal to 1"
+        );
+      } else if (a < 1) {
+        console.log("a is less than 1");
+      } else if (a > 10) {
+        console.log("a is larger than 10");
+      } else {
+        console.log(
+          "Something wrong"
+        ); /* if not equal to number or some unexpected input*/
+      }
+
+      a = 100;
+
+      switch (a) {
+        case 100:
+          console.log("Score A");
+          break;
+
+        case 90:
+          console.log("Score B");
+          break;
+        case 80:
+          console.log("Score C");
+          break;
+        default:
+          console.log("Below C");
+      }
+
+      a = 11;
+
+      /* && is higher precedence than */
+      if ((a <= 10 && a >= 12) || a == 11) {
+        console.log("AAAAA");
+      }
+
+      /* A || B, if A true chance more than B, then can put A first,
+
+      https://www.freecodecamp.org/news/short-circuiting-in-javascript/
+
+      A && B, if A false chance more than B, then can put A first,
+      */
+
+      a = 1 || false; /*short circuit * a will equal to 1*/
+      console.log(a);
+
+      a = 0 || ""; /*short circuit * a will equal to empty string*/
+      console.log(a);
+
+      a = 0 || undefined; /*short circuit * a will equal to undefined*/
+
+      console.log(a);
+
+      a = 0 || 1 || undefined; /*short circuit * a will equal to 1, */
+
+      console.log(a);
+
+      a = 0 || "" || undefined || null || {}; /*short circuit {} assign  */
+
+      console.log(a);
+
+      /*
+      Remember that there are only 7 values in JavaScript that are falsy:
+
+            false
+            0
+            0n: 0 as a BigInt
+            '': Empty string
+            null
+            undefined
+            NaN
+
+
+      */
+
+      /*2024-10-19 short circuit, faisy and truthy value*/
+
+      if (!0) {
+        console.log("TRUE");
+      } else {
+        console.log("False");
+      }
+
+      let default_city = "KN";
+      city = "TST";
+
+      a = city || console.log("input city!") || default_city;
+
+      console.log(a); // console return undefined
+
+      /*zealdocs.org */
+      a = "abc";
+      console.log(a.toUpperCase().repeat(3).substring(1, 9));
+
+      for (let i = 0; i <= 10; i++) {
+        console.log("hello");
+      }
+
+      let j = 0;
+      for (; j <= 10; ) {
+        console.log(`j:${j} : Hello`);
+        j++;
+      }
+
+      let k = 0;
+      while (true) {
+        if (k >= 10) break;
+        console.log("hello");
+
+        if (k == 3) {
+          k++;
+          continue;
+        }
+        k++;
+      }
+    </script>
+  </body>
+</html>

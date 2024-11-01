@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   const hello = () => {
+      //     x = 1;
+      //     y = 2;
+      //     console.log("I am inside arrow function");
+
+      //     // return x,y; not ok
+
+      //     return [x, y]; // return starting address of array
+      //   };
+
+      //   let [a, b] = hello();
+      //   console.log(x, y);
+
+      x = () => {
+        x = 1;
+        y = 2;
+        console.log("I am inside arrow function");
+        return [x, y];
+      };
+
+      console.log(x());
+      [a, b] = x();
+      console.log(a, b);
+
+      /*
+        windows.xf;
+
+        >>> windows.xf = 1;
+        >>> windows.y =2
+
+        x already overwrite from function value 1;
+      
+      
+      */
+    </script>
+  </body>
+</html>

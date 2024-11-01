@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+        {dog:[]}    : actually a assignment
+        variable = []
+        
+        
+        */
+      const pets = [
+        { type: "dog", name: "john", age: 6 },
+        { type: "cat", name: "jack", age: 2 },
+        { type: "dog", name: "jackie", age: 8 },
+        { type: "cat", name: "peter", age: 10 },
+      ];
+
+      const groupedPets = pets.reduce((temp, i) => {
+        const variable = i.type;
+
+        /*object variable create and add new data to []*/
+        if (!temp[variable]) {
+          temp[variable] = [];
+        }
+
+        temp[variable].push(i.name);
+        return temp;
+      }, {});
+
+      console.log(groupedPets);
+
+      const numbers = [1, 2, 3, 4, 5];
+
+      const callback = (value) => {
+        console.log(`Processing value ${value}`);
+        return callback;
+      };
+
+      const sum = numbers.reduce((acc, value) => {
+        return acc(value);
+      }, callback);
+    </script>
+  </body>
+</html>

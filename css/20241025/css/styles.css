@@ -1,0 +1,52 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* border: 1px solid red; */
+}
+
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.container {
+  display: flex;
+}
+
+p {
+  padding: 2rem;
+}
+
+main {
+  container-type: inline-size;
+  container-name: MX;
+  width: 100%;
+  padding: 20px;
+  margin: 30px auto;
+}
+
+main p {
+  background: green;
+}
+
+aside {
+  background: orange;
+  container-type: inline-size;
+  container-name: AX;
+  padding: 20px;
+  flex: 0 0 30%;
+}
+
+/* MX should have space between MX and (max-width)*/
+@container MX (max-width: 600px) {
+  main p {
+    background: lightblue;
+  }
+}
+
+@container AX (max-width: 300px) {
+  aside p {
+    background: lightgreen; /* Changed from aside p to aside */
+  }
+}

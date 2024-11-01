@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const array1 = [1, 2, 3, 4, 5, 6];
+      array1 = [2, 3, 4, 5];
+
+      /*
+      
+                Great question! The distinction between const and how it works with primitive values versus reference types (like arrays) is an important aspect of JavaScript. Let's break it down.
+
+            1. const and Primitive Values
+            When you declare a variable with const, it means that the variable's reference cannot be changed. However, if the variable holds a primitive value (like a number, string, boolean, etc.), you cannot change that value:
+
+            javascript
+
+            複製
+            const a = 1;
+            a = 2; // This will throw an error: "Assignment to constant variable."
+            In this case, a is assigned a primitive value of 1, and trying to reassign it results in an error.
+
+            2. const and Reference Types
+            When you declare a variable with const that holds a reference type (like an array or an object), you cannot change the reference itself (i.e., you cannot assign a new array or object to that variable). However, you can modify the contents of the object or array that it points to:
+
+            javascript
+
+            複製
+            const b = [1, 2, 3];
+            b[0] = 10; // This is allowed
+            console.log(b); // Output: [10, 2, 3]
+
+            b = [4, 5, 6]; // This will throw an error: "Assignment to constant variable."
+            Explanation
+            Immutability of Reference:
+            When you declare const a = 1;, a refers to the primitive value 1. Since primitives are immutable, you cannot change the value of a.
+            When you declare const b = [1, 2, 3];, b refers to the array [1, 2, 3]. While you cannot change b to point to a new array, you can modify the contents of the existing array.
+            Reference vs. Value:
+            Primitives are stored directly in the variable, while reference types store a reference (or pointer) to the memory location where the data is stored.
+            With reference types, the data itself can be changed without changing the reference.
+            Summary
+            For primitives: const prevents reassignment of the variable.
+            For reference types: const prevents reassignment of the reference, but you can still change the properties or elements of the referenced object or array.
+            This behavior is fundamental to understanding how JavaScript handles different data types. If you have more questions or need further clarifications, feel free to ask!
+                
+      
+      */
+    </script>
+  </body>
+</html>

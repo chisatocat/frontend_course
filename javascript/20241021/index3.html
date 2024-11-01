@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function a() {
+        console.log("I am from function a");
+        return b;
+      }
+
+      function b() {
+        console.log("I am from function a");
+
+        /*check a it is exist (reg), if not jump up until windows*/
+        return a;
+      }
+
+      a()()()()()();
+
+      const c = function () {
+        console.log("I am from function c");
+        return d;
+      };
+
+      const d = function () {
+        console.log("I am from function d");
+
+        /*check a it is exist (reg), if not jump up until windows*/
+        return c;
+      };
+
+      c()()()()()();
+    </script>
+  </body>
+</html>

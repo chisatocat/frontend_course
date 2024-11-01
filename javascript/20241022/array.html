@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const companies = [
+        { name: "company 1", category: "retails", start: 1992, end: 2024 },
+        { name: "company 2", category: "finance", start: 1971, end: 2020 },
+        { name: "company 3", category: "whoSales", start: 1988, end: 1999 },
+        { name: "company 4", category: "retails", start: 1996, end: 2010 },
+        { name: "company 5", category: "retails", start: 1960, end: 2024 },
+        { name: "company 6", category: "finance", start: 1992, end: 2011 },
+        { name: "company 7", category: "finance", start: 1986, end: 2009 },
+        { name: "company 8", category: "retails", start: 1977, end: 2012 },
+        { name: "company 9", category: "retails", start: 1992, end: 2006 },
+        { name: "company 10", category: "whoSales", start: 1992, end: 1997 },
+      ];
+
+      const ages = [33, 12, 45, 77, 60, 23, 7, 80, 55, 67, 29, 16];
+
+      //   naming for array , e.g. companies, apples
+      let farray = companies.filter((company) => {
+        return company.category == "retails";
+      });
+
+      console.log(farray);
+
+      /* statement*/
+
+      for (let i = 0; i < companies.length; i++) {
+        console.log(companies[1]);
+      }
+
+      /* expression */
+      companies.forEach((company) => {
+        console.log(company.start);
+        company.start++;
+        console.log(company.start);
+      });
+      const oldAges = [18, 17, 16, 15, 14];
+
+      oldAges.forEach((age, index, array) => {
+        array[index] = ++age;
+      });
+
+      console.log("!!!!!!!" + oldAges);
+
+      /* statement vs expression */
+      /* expression function programming can a().b().c() , statement can't
+
+        a = [1, , 1];
+
+        /* import 4 function of array */
+      /* foreach */
+      /**/
+
+      // Create a large array for testing
+      const largeArray = Array.from({ length: 1000000 }, (_, i) => i);
+
+      // Benchmark forEach
+      console.time("forEach");
+      largeArray.forEach((element) => {
+        // Simulate some work
+        const squared = element * element;
+      });
+      console.timeEnd("forEach"); // Logs the time taken for forEach loop
+
+      // Benchmark traditional for loop
+      console.time("for");
+      for (let i = 0; i < largeArray.length; i++) {
+        // Simulate some work
+        const squared = largeArray[i] * largeArray[i];
+      }
+      console.timeEnd("for"); // Logs the time taken for traditional for loop
+
+      //       Array.prototype.myForEach = function(callback, thisArg) {
+      //     // Check if the callback is a function
+      //     if (typeof callback !== 'function') {
+      //         throw new TypeError(callback + ' is not a function');
+      //     }
+
+      //     // Get the array on which forEach was called
+      //     const array = this;
+
+      //     // Iterate over each element in the array
+      //     for (let i = 0; i < array.length; i++) {
+      //         // Check if the current element is defined
+      //         if (i in array) {
+      //             // Call the callback function with the current element, index, and the array
+      //             callback.call(thisArg, array[i], i, array);
+      //         }
+      //     }
+      // };
+
+      /*Filter function */
+
+      total = 0;
+
+      ages.forEach((age) => {
+        total += age;
+      });
+
+      console.log(total);
+
+      ages.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+      console.log(total);
+
+      let adult = [];
+
+      for (let i = 0; i < ages.length; i++) {
+        if (ages[i] >= 18) adult.push(ages[i]);
+      }
+
+      let filterAges = ages.filter((age) => age >= 18);
+
+      console.log(filterAges);
+      console.log(adult);
+
+      const retailsCompanies = companies
+        .filter((company) => company.category === "retails")
+        .filter((company) => {
+          return company.end - company.start + 1 >= 20;
+        });
+
+      console.log(retailsCompanies);
+
+      const companyNames = companies.map((company) => company.name);
+
+      const testMap = companies.map(
+        (company) => `${company.name}[${company.start} - ${company.end}]`
+      );
+
+      console.log(companyNames);
+
+      console.log(testMap);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+/* Enable container queries on the container */
+.container {
+  padding: 20px;
+  border: 1px solid #ccc;
+  width: 100%;
+  max-width: 600px; /* Maximum width for the container */
+  margin: auto; /* Center the container */
+  background-color: lightblue;
+  container-type: inline-size; /* Enable container queries */
+
+  container-name: ABC;
+}
+
+/* Styles for when the container is at least 400px wide */
+@container ABC (min-width: 600px) {
+  .container {
+    background-color: lightgreen; /* Change background color */
+  }
+}
+
+/* Styles for when the container is at least 500px wide */
+@container ABC (min-width: 700px) {
+  .container {
+    background-color: lightcoral; /* Change background color again */
+    font-size: 1.5em; /* Increase font size */
+  }
+}
+
+/* Styles for when the container is at least 600px wide */
+@container (min-width: 600px) {
+  .container {
+    background-color: lightsalmon; /* Another color change */
+    font-size: 2em; /* Further increase font size */
+  }
+}

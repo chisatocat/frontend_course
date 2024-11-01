@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      y = 0;
+
+      /*{} is a object , name: 'ryan' means name = 'ryan' name reg inside x and have a address*/
+      x = {
+        name: "ryan",
+
+        fun: () => {
+          y++;
+        },
+      };
+
+      a = {
+        name: "ann",
+
+        /*reuse function form object x*/
+        fun: x.fun,
+      };
+
+      x.fun(); // fun is address of function, see() then run at windows enviroment, phasing phase no action,
+      // execution phase, check y and find it at global (windows), then y++ .
+
+      z = [x.fun]; // array destructing
+      z[0]();
+
+      a.fun();
+
+      console.log(y);
+    </script>
+  </body>
+</html>

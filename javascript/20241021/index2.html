@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function a() {
+        const x = () => {
+          y = 1;
+          const z = () => {
+            y = 2;
+          };
+          return z;
+        };
+        return x;
+      }
+
+      /*
+      1) a()()()
+      2) x()()
+      3) z()
+      4) windows.y =2 finally
+      
+      */
+
+      a()()();
+
+      console.log(y);
+
+      // 1) phasing phase,  reg a
+      // 2) copy to ram
+      //    const x = () =>
+      //    {
+      //        y = 1;
+      //        const z = () =>
+      //        {
+      //            y = 2;
+      //         };
+      //        return z;
+      //     };
+      //     return x;
+      // 3) check a it is exist, if ok then continue
+      // 4a) run x()
+      // phasing phase, reg z
+      //        y = 1;
+      //        const z = () =>
+      //        {
+      //            y = 2;
+      //         };
+      //        return z;
+      // execution phase , reg y and set y=1, try to step out until windows, reg y at windows
+      // windows.y =1
+      // copy {} to ram and assign address to z
+      // return z;
+      // a()() >>> z()
+      // run z()
+      // phasing phase , no action
+      // execution phase, check y locally, not exist, check inside x, y not exist, check inside a, not exist, check windows
+      // windows.y=1 >>> update windows.y=2
+    </script>
+  </body>
+</html>

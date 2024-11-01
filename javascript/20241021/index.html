@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function a(x, y) {
+        // x=b, y=c
+        console.log("i am function a", x(y));
+      }
+
+      //   a(b,c);  temporary dead zone,
+
+      const b = function (y) {
+        // default return undefined
+
+        /* Y()() >>> b(c) will return a d function address >>> and then run as d()*/
+        /* phasing phase, y=c, register const d inside*/
+        /* execution phase , copy expression to d at RAM, assign address to D, return d means return function content*/
+        console.log("I am function b,function expression." + y()());
+      };
+
+      const c = () => {
+        console.log("I am function c");
+        const d = () => {
+          console.log("Iam from inner function");
+          return " > Hello World!!!";
+        };
+
+        return d;
+      };
+
+      a(b, c);
+
+      //         function a(x, y) {
+      //     console.log("i am function a", x(y));
+      //   }
+
+      //   //   a(b,c);  temporary dead zone,
+
+      //   var b = function (y) {
+      //     // default return undefined
+
+      //     console.log("I am function b,function expression." + y);
+      //   };
+
+      //   var c = () => {
+      //     console.log("I am function c");
+      //   };
+
+      //   a(b, c);
+      //  a(b,c) still not work
+      // parsing phase, register function a, var b=undefined, var c=undefined
+      // execution phase , function a, x is undefined, will show error x is not a function
+    </script>
+  </body>
+</html>

@@ -1,0 +1,123 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+nav {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: inline;
+  margin-right: 20px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+
+  padding: 8px;
+  resize: none;
+}
+
+button {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border: none;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* select by attribute*/
+
+input[type="email"] {
+  border-color: green;
+  border-width: 3px;
+}
+
+input[type="text"] {
+  border-color: blue;
+}
+
+/* input[type="text"][id="name"] {
+  background: lightblue;
+} */
+
+input[required] {
+  border-color: red;
+}
+
+/* input[disabled][type="text"][id="name"] {
+  background-color: #ccc;
+} */
+
+input[disabled] {
+  background-color: #ccc;
+}
+
+input[type="password"] {
+  background-color: green;
+}
+
+button[type="submit"] {
+  background-color: purple;
+}
+
+/* ^ means begin of string */
+a[href^="#"] {
+  color: yellow;
+}
+
+/* $ means of string */
+a[href$=".com"] {
+  color: orange;
+}
+
+/* $ means of string */
+a[href*="goo"] {
+  text-decoration: underline;
+}
