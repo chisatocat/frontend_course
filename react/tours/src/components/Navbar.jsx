@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../img/logo.svg";
+
 import PageLinks from "./PageLinks";
 import IconLinks from "./IconLinks";
 import NavToggleButton from "./NavToggleButton";
@@ -10,7 +10,7 @@ function Navbar({ toggleFunction, toggleState }) {
       <nav className="navbar">
         <div className="nav-logo">
           <a href="#home">
-            <img src={logo} alt="logo" />
+            <img src="/img/logo.svg" alt="logo" />
           </a>
         </div>
 

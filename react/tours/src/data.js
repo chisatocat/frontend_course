@@ -45,7 +45,7 @@ export const toggleButton = {
 export const tourData = [
   {
     id: 1,
-    image: "../img/feature001.jpg",
+    image: "/img/feature001.jpg",
     date: "Aug 26th 2024",
     title: "tibet adventure",
     info: " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit vel corrupti voluptate, ducimus laudantium eum quidem mollitia qui quo dolorem amet cumque culpa rerum porro adipisci aliquid dicta, tenetur exercitationem.",
@@ -57,7 +57,7 @@ export const tourData = [
 
   {
     id: 2,
-    image: "../img/feature002.jpg",
+    image: "/img/feature002.jpg",
     date: "Aug 26th 2024",
     title: "tibet adventure",
     info: " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit vel corrupti voluptate, ducimus laudantium eum quidem mollitia qui quo dolorem amet cumque culpa rerum porro adipisci aliquid dicta, tenetur exercitationem.",
@@ -69,7 +69,7 @@ export const tourData = [
 
   {
     id: 3,
-    image: "../img/feature003.jpg",
+    image: "/img/feature003.jpg",
     date: "Aug 26th 2024",
     title: "tibet adventure",
     info: " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit vel corrupti voluptate, ducimus laudantium eum quidem mollitia qui quo dolorem amet cumque culpa rerum porro adipisci aliquid dicta, tenetur exercitationem.",
@@ -81,7 +81,7 @@ export const tourData = [
 
   {
     id: 4,
-    image: "../img/feature04.jpg",
+    image: "/img/feature04.jpg",
     date: "Aug 26th 2024",
     title: "tibet adventure",
     info: " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit vel corrupti voluptate, ducimus laudantium eum quidem mollitia qui quo dolorem amet cumque culpa rerum porro adipisci aliquid dicta, tenetur exercitationem.",
@@ -93,7 +93,7 @@ export const tourData = [
 
   {
     id: 5,
-    image: "../img/feature05.jpg",
+    image: "/img/feature05.jpg",
     date: "Aug 26th 2024",
     title: "tibet adventure",
     info: " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit vel corrupti voluptate, ducimus laudantium eum quidem mollitia qui quo dolorem amet cumque culpa rerum porro adipisci aliquid dicta, tenetur exercitationem.",
@@ -105,7 +105,7 @@ export const tourData = [
 
   {
     id: 6,
-    image: "../img/feature06.jpg",
+    image: "/img/feature06.jpg",
     date: "Aug 26th 2024",
     title: "tibet adventure",
     info: " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit vel corrupti voluptate, ducimus laudantium eum quidem mollitia qui quo dolorem amet cumque culpa rerum porro adipisci aliquid dicta, tenetur exercitationem.",

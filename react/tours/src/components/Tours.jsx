@@ -3,7 +3,7 @@ import Title from "./Title";
 import { tourData } from "../data";
 
 function Tours() {
-  return (
+  return  ( 
     <div className="section  mb-large" id="tours">
       <Title main_title="Featured" sub_title="tours" />
 

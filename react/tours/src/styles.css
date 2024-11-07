@@ -185,7 +185,7 @@ a {
   align-items: center;
   height: 90vh;
   background-color: lightblue;
-  background: url("./img/beach.jpg") center / cover;
+  background: url("") center / cover;
   z-index: 0;
   position: relative;
 }
